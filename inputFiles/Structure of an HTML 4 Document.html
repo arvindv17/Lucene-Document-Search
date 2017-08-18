@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0055)http://www.htmlhelp.com/reference/html40/structure.html -->
+<html lang="en-us" class="gr__htmlhelp_com"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Structure of an HTML 4 Document</title>
+<link rev="Made" href="mailto:liam@htmlhelp.com">
+<link rel="Start" href="http://www.htmlhelp.com/reference/html40/">
+<link rel="Glossary" href="http://www.htmlhelp.com/glossary/glossary.html">
+<link rel="Copyright" href="http://www.htmlhelp.com/copyright.html">
+<link rel="StyleSheet" href="./Structure of an HTML 4 Document_files/style.css" type="text/css">
+<link rel="StyleSheet" href="./Structure of an HTML 4 Document_files/aural.css" type="text/css" media="aural">
+<meta name="author" content="Liam Quinn">
+<meta name="description" content="An explanation of elements, tags, and attributes, and how they are used in an HTML 4 document.">
+<meta name="keywords" content="elements, tags, attributes, element, tag, attribute, structure, HTML 4 document, HTML4 document, documents, HyperText Markup Language, HTML, HTML4, HTML 4, HTML 4.01, HTML 4.0, Web Design Group, WDG">
+</head>
+<body data-gr-c-s-loaded="true">
+
+<!--top_ad_placeholder-->
+<h2><img src="./Structure of an HTML 4 Document_files/wdglogo1.gif" width="250" height="83" alt="The Web Design Group"></h2>
+<h1>Structure of an HTML 4 Document</h1>
+<ul>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#elements">Elements and Tags</a></li>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#attributes">Attributes</a></li>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#characters">Special Characters</a></li>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#comments">Comments</a></li>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#doc">A Complete HTML 4 Document</a></li>
+  <li><a href="http://www.htmlhelp.com/reference/html40/structure.html#validation">Validating your <abbr class="initialism" title="HyperText Markup Language">HTML</abbr></a></li>
+</ul>
+<h2><a name="elements">Elements and Tags</a></h2>
+<p><dfn>Elements</dfn> are the structures that describe parts of an <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> document. For example, the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/block/p.html">P</a></strong> element represents a <em>paragraph</em> while the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/phrase/em.html">EM</a></strong> element gives <em>emphasized</em> content.</p>
+<p>An element has three parts: a start tag, content, and an end tag. A <dfn>tag</dfn> is special text--"markup"--that is delimited by "<strong class="html">&lt;</strong>" and "<strong class="html">&gt;</strong>". An end tag includes a "<strong class="html">/</strong>" after the "<strong class="html">&lt;</strong>". For example, the <strong class="html">EM</strong> element has a start tag, <strong class="html">&lt;EM&gt;</strong>, and an end tag, <strong class="html">&lt;/EM&gt;</strong>. The start and end tags surround the <em>content</em> of the <strong class="html">EM</strong> element:</p>
+<p class="example"><code class="html">&lt;EM&gt;This is emphasized text&lt;/EM&gt;</code></p>
+<p>Element names are always case-insensitive, so <strong class="html">&lt;em&gt;</strong>, <strong class="html">&lt;eM&gt;</strong>, and <strong class="html">&lt;EM&gt;</strong> are all the same.</p>
+<p>Elements cannot overlap each other. If the start tag for an <strong class="html">EM</strong> element appears within a <strong class="html">P</strong>, the <strong class="html">EM</strong>'s end tag must also appear within the same <strong class="html">P</strong> element.</p>
+<p>Some elements allow the start or end tag to be omitted. For example, the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/lists/li.html">LI</a></strong> end tag is always optional since the element's end is implied by the next <strong class="html">LI</strong> element or by the end of the list:</p>
+<pre class="example"><code class="html">&lt;UL&gt;
+  &lt;LI&gt;First list item; no end tag
+  &lt;LI&gt;Second list item; optional end tag included&lt;/LI&gt;
+  &lt;LI&gt;Third list item; no end tag
+&lt;/UL&gt;</code></pre>
+<p>Some elements have no end tag because they have no content. These elements, such as the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/special/br.html">BR</a></strong> element for line breaks, are represented only by a start tag and are said to be <em>empty</em>.</p>
+<h2><a name="attributes">Attributes</a></h2>
+<p>An element's <dfn>attributes</dfn> define various properties for the element. For example, the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/special/img.html">IMG</a></strong> element takes a <strong class="html">SRC</strong> attribute to provide the location of the image and an <strong class="html">ALT</strong> attribute to give alternate text for those not loading images:</p>
+<p class="example"><code class="html">&lt;IMG SRC="wdglogo.gif" ALT="Web Design Group"&gt;</code></p>
+<p>An attribute is included in the start tag only--never the end tag--and takes the form <strong class="html"><var>Attribute-name</var>="<var>Attribute-value</var>"</strong>. The attribute value is delimited by single or double quotes. The quotes are optional if the attribute value consists solely of letters in the range A-Z and a-z, digits (0-9), hyphens ("-"), periods ("."), underscores ("_"), and colons (":").</p>
+<p>Attribute names are case-insensitive, but attribute values may be case-sensitive.</p>
+<h2><a name="characters">Special Characters</a></h2>
+<p>Certain characters in <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> are reserved for use as markup and must be escaped to appear literally. The "&lt;" character may be represented with an <em>entity</em>, <strong class="html">&amp;lt;</strong>. Similarly, "&gt;" is escaped as <strong class="html">&amp;gt;</strong>, and "&amp;" is escaped as <strong class="html">&amp;amp;</strong>. If an attribute value contains a double quotation mark and is delimited by double quotation marks, then the quote should be escaped as <strong class="html">&amp;quot;</strong>.</p>
+<p>Other entities exist for special characters that cannot easily be entered with some keyboards. For example, the copyright symbol ("©") may be represented with the entity <strong class="html">&amp;copy;</strong>. See the <a href="http://www.htmlhelp.com/reference/html40/entities/">Entities</a> section for a complete list of HTML 4 entities.</p>
+<p>As an alternative to entities, authors may also use <em>numeric character references</em>. Any character may be represented by a numeric character reference based on its "code position" in <a href="http://www.unicode.org/">Unicode</a>. For example, one could use <strong class="html">&amp;#169;</strong> for the copyright symbol or <strong class="html">&amp;#1575;</strong> for the Arabic letter alef.</p>
+<h2><a name="comments">Comments</a></h2>
+<p>Comments in <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> have a complicated syntax that can be simplified by following this rule: Begin a comment with "<strong class="html">&lt;!--</strong>", end it with "<strong class="html">--&gt;</strong>", and do not use "<strong class="html">--</strong>" within the comment.</p>
+<p class="example"><code class="html">&lt;!-- An example comment --&gt;</code></p>
+<h2><a name="doc">A Complete HTML 4 Document</a></h2>
+<p>An HTML 4 document begins with a <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/html/doctype.html">DOCTYPE</a></strong> declaration that declares the version of <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> to which the document conforms. The <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/html/html.html">HTML</a></strong> element follows and contains the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/head/head.html">HEAD</a></strong> and <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/html/body.html">BODY</a></strong>. The <strong class="html">HEAD</strong> contains information about the document, such as its title and keywords, while the <strong class="html">BODY</strong> contains the actual content of the document, made up of <a href="http://www.htmlhelp.com/reference/html40/block.html">block-level elements</a> and <a href="http://www.htmlhelp.com/reference/html40/inline.html">inline elements</a>. A basic HTML 4 document takes on the following form:</p>
+<pre class="example"><code class="html">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;The document title&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;H1&gt;Main heading&lt;/H1&gt;
+    &lt;P&gt;A paragraph.&lt;/P&gt;
+    &lt;P&gt;Another paragraph.&lt;/P&gt;
+    &lt;UL&gt;
+      &lt;LI&gt;A list item.&lt;/LI&gt;
+      &lt;LI&gt;Another list item.&lt;/LI&gt;
+    &lt;/UL&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre>
+<p class="note">In a <a href="http://www.htmlhelp.com/reference/html40/html/doctype.html#frameset">Frameset</a> document, the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/frames/frameset.html">FRAMESET</a></strong> element replaces the <strong class="html"><a href="http://www.htmlhelp.com/reference/html40/html/body.html">BODY</a></strong> element.</p>
+<h2><a name="validation">Validating your <abbr class="initialism" title="HyperText Markup Language">HTML</abbr></a></h2>
+<p>Each <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> document should be <em>validated</em> to check for errors such as missing quotation marks (<strong class="oops">&lt;A HREF="oops.html&gt;Oops&lt;/A&gt;</strong>), misspelled element or attribute names, and invalid structures. Such errors are not always apparent when viewing a document in a browser since browsers are designed to recover from an author's errors. However, different browsers recover in different ways, sometimes resulting in invisible text on one browser but not on others.</p>
+<p>The <a href="http://www.htmlhelp.com/tools/validator/"><abbr class="initialism" title="Web Design Group">WDG</abbr> <abbr class="initialism" title="HyperText Markup Language">HTML</abbr> Validator</a> checks the validity of HTML 4 documents.</p>
+<p class="note">Note that some programs claim to be validators but really are not. A validator checks a document against a formal <em>document type definition</em> (<abbr class="initialism">DTD</abbr>) while other programs such as <em>lints</em> warn about valid but unsafe <abbr class="initialism" title="HyperText Markup Language">HTML</abbr>. Both kinds of programs are useful, but validation should never be forgotten.</p>
+
+<p class="toolbar"><a href="http://www.htmlhelp.com/reference/html40/" rel="Start">HTML&nbsp;4.0&nbsp;Reference</a>&nbsp;~ <a href="http://www.htmlhelp.com/reference/html40/olist.html">Elements&nbsp;by&nbsp;Function</a>&nbsp;~ <a href="http://www.htmlhelp.com/reference/html40/alist.html">Elements&nbsp;Alphabetically</a></p>
+
+<div class="linkads" style="clear: right">
+<h2>HTMLHelp Sponsors</h2>
+<p>Audio Discounters provides a wide range of <a href="http://www.audio-discounters.com/">Computer Cables</a>.</p>
+</div>
+
+<div class="footer">
+<address class="liamsig">Maintained by <a href="http://www.htmlhelp.com/~liam/">Liam Quinn</a> &lt;<a href="mailto:liam@htmlhelp.com">liam@htmlhelp.com</a>&gt;</address>
+
+<p class="navbar">
+    	<a href="http://www.htmlhelp.com/">Home</a>, 
+    	<a href="http://forums.htmlhelp.com/">Forums</a>, 
+    	<a href="http://www.htmlhelp.com/reference/">Reference</a>, 
+    	<a href="http://www.htmlhelp.com/tools/">Tools</a>,
+    	<a href="http://www.htmlhelp.com/faq/">FAQs</a>,
+    	<a href="http://www.htmlhelp.com/feature/">Articles</a>,
+    	<a href="http://www.htmlhelp.com/design/">Design</a>, 
+    	<a href="http://www.htmlhelp.com/links/">Links</a>
+</p>
+
+<p class="copyright"><a href="http://www.htmlhelp.com/copyright.html">Copyright</a> © 1996 - 2007. <img src="./Structure of an HTML 4 Document_files/wdglogo-small.gif" width="105" height="40" alt="Web Design Group"> All rights reserved.</p>
+
+<script src="./Structure of an HTML 4 Document_files/urchin.js.download" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-251918-1"; urchinTracker(); </script>
+</div>
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
