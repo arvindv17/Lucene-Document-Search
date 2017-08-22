@@ -78,7 +78,7 @@ public class FileIndexer {
 
 						fileParser.checkFile(file);
 						// Index this file
-						System.out.println("in if part");
+
 						indexDoc(writer, file, attrs.lastModifiedTime().toMillis());
 					} catch (IOException ioe) {
 						ioe.printStackTrace();
@@ -101,7 +101,7 @@ public class FileIndexer {
 	static void indexDoc(IndexWriter writer, Path file, long lastModified) throws IOException {
 		try (InputStream stream = Files.newInputStream(file)) {
 
-			String fileType = file.toString().substring(file.toString().length() - 3, file.toString().length());
+			String fileType = file.toString().substring(file.toString().length() - 4, file.toString().length());
 			System.out.println("indexDoc:- " + file + " fileType is:- " + fileType);
 
 			// Create lucene Document

@@ -45,15 +45,14 @@ table, th, td {
 			</br>
 		</tr>
 		<c:forEach var="data" items="${foundResults}">
+		
 			
 
 			<c:forEach var="highlight" items="${data.searchHighlightTextResult}">
 				<tr>
-				</tr>
-				<tr>
 					<td><cout>${data.path}</cout><br></td>
 					<td><cout>${data.docIndexScore}</cout><br></td>
-					<td><cout>${highlight}</cout><br> <br></td>
+					<td><cout>${highlight}</cout></td>
 				</tr>
 			</c:forEach>
 		</c:forEach>
