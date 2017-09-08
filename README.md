@@ -14,15 +14,15 @@ Example of an inverted index is to search for the contents of a book by searchin
 Lucene follows the concept of inverted index. Hence it is one of the best applications to use for creating of text search applications.
 
 # Code Links
-[Controller](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/controller)
+1. [Controller](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/controller)
 * Different File parsing logic
 * Indexing Logic
 * Home Controller for an MVC application logic
 
-[Highlighter](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/highlight)
+2. [Highlighter](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/highlight)
 * Highlighter for Lucene to display in HTML page
 
-[Quality Check](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/qualitycheck)
+3. [Quality Check](https://github.com/arvindv17/Lucene-Document-Search/tree/master/src/main/java/com/neu/edu/document/search/qualitycheck)
 * Precision and Recall logic
 
 # Results
